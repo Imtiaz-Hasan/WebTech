@@ -16,8 +16,7 @@
 	
 	
 
-	 error_reporting(E_ALL & E_STRICT); ini_set('display_errors', '1');
-	 ini_set('log_errors', '0'); ini_set('error_log', './');
+	 
 	 if(isset($_POST["submit"]))
 	 {
 		 
@@ -29,12 +28,12 @@
 		 
 		 elseif(strlen($_POST["uname"])<6)
 		 {
-			 $err_uname="[Username must be 6 charachters long]";
+			 $err_uname="[Must be in 6 charachters]";
 		 }
 		 
 		 elseif(strpos($_POST["uname"]," "))
 		 {
-			 $err_uname="[Username should not contain white space]";
+			 $err_uname="[Space not allowed]";
 		 }
 		 
 		 else
@@ -48,7 +47,7 @@
 		 }
 		 elseif(strpos($_POST["pass"]," "))
 		 {
-			 $err_pass="[Password should not contain white space]";
+			 $err_pass="[Space not allowed]";
 		 }
 		 
 		 else
@@ -58,7 +57,7 @@
 		 
 		 if(!isset($_POST["gender"]))
 		 {
-			 $err_gender="[Please select a gender]";
+			 $err_gender="[Select a gender]";
 		 }
 		 
 		 else
@@ -84,7 +83,7 @@
 		 
 		 if(!isset($_POST["profession"]))
 		 {
-			 $err_profession="[This field can not be skipped]";
+			 $err_profession="[You must select an option]";
 		 }
 		 
 		 else
@@ -102,18 +101,28 @@
 			 $bio=$_POST["bio"];
 		 
          }
-         if(!isset($_POST["submit"]))
+         if(isset($_POST["submit"]))
          {
             echo "Username: ".$_POST["uname"]."<br>";
+			
             echo "Password: ".$_POST["pass"]."<br>";
+			
             echo "Gender: ".$_POST["gender"]."<br>";
+			
             echo "Profession: ".$_POST["profession"]."<br>";
+			
             echo "Biography: ".$_POST["bio"]."<br>";
+			
             echo "Date: ".$_POST["date"]."<br>";
+			
             echo "E-Mail: ".$_POST["email"]."<br>";
-            //echo "Salary: ".$_POST["salary"]."<br>";
+			
+         
+			
             $var = $_POST["Hobbies"];
+			
             echo "Hobbies: ";
+			
             count($var);
             for($i=0;$i<count($var);$i++)
             {
@@ -127,7 +136,12 @@
 	<body>
 		<h1>User Registration</h1>
 		<form action="" method="post">
+		
+		
+		
+		
 			<table>
+			
 				<tr>
 				
 				
@@ -147,6 +161,9 @@
 					    <input type="radio" name="gender" value="Female"><span>Female</span>
 						<span><?php echo "&nbsp ".$err_gender;?></span></td>
 				</tr>
+				
+				
+				
 				<tr>
 				
 				
@@ -157,6 +174,8 @@
 						<input type="checkbox" name="Hobbies[]" value="Sports"><span>Sports</span>
 						<span><?php echo "&nbsp  ".$err_Hobbies;?></span></td>
 				</tr>
+				
+				
 				<tr>
 					<td><span><b>Profession</b></span></td>
 					<td>: 
@@ -170,19 +189,30 @@
 						<span><?php echo "&nbsp".$err_profession;?></span>
 					</td>
 				</tr>
+				
+				
+				
+				
 				<tr>
 	 				<td><span><b>Bio</b></span></td>
 					 <td>:<textarea name="bio" value="<?php echo $bio;?>"></textarea>
 					 <span><?php echo "&nbsp".$err_bio;?></span></td>
 				</tr>
+				
+				
+				
 				<tr>
 					<td><span><b>Email</b></span></td>
 					<td>:<input type="email" name="email"></td>
 				</tr>
+				
 				<tr>
 					<td><span><b>Mobile/Phone</b></span></td>
 					<td>:<input type="tel" name="phone_no"></td>
 				</tr>
+				
+				
+				
 				<tr>
 					<td><span><b>Date</b></span></td>
 					<td>:<input type="date" name="date"></td>
@@ -193,6 +223,10 @@
 			
 			<br>
 			<input type="submit" name="submit" value="submit">
+			
+			
 		</form>
+		
 	</body>
+	
 </html>
