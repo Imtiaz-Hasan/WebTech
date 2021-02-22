@@ -277,7 +277,7 @@
   </head>
      <body>
 
-        <fieldset style ="width:500px">
+        <fieldset style ="width:800px">
             <legend><h1>Club Registrations</h1></legend>
             <form action="" method="post">
 			
@@ -342,18 +342,28 @@
                         <td><span>Birth Date:</span></td>
                         <td><select name ="bdate">
                         <option disabled selected>Date</option>
-                        <?php         for($date = 1; $date <= 31; $date++)         echo"<option value = '".$date."'>".$date."</option>";     ?>
+                        <?php         for($date = 1; $date <= 31; $date++)         
+						echo"<option value = '".$date."'>".$date."</option>";     
+						?>
+						
+						
                         </select>
 
                         <select name ="bmonth">
                         <option disabled selected>Month</option>
-                        <?php         for($month = 1; $month <= 12; $month++)         echo"<option value = '".$month."'>".$month."</option>";     ?>
+                        <?php         for($month = 1; $month <= 12; $month++)         
+						echo"<option value = '".$month."'>".$month."</option>";     
+						?>
                         </select>
                         
 
                         <select name ="byear">
                         <option disabled selected>Year</option>
-                        <?php         for($year = 1985; $year <= 2002; $year++)         echo"<option value = '".$year."'>".$year."</option>";     ?>
+                        <?php         for($year = 1985; $year <= 2002; $year++)         
+						echo"<option value = '".$year."'>".$year."</option>";     
+						?>
+						
+						
                         </select>
 
                         <span><?php echo $err_bdate;?></span>
