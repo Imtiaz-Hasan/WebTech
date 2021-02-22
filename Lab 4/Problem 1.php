@@ -139,7 +139,7 @@
                 
             }
             else if(strlen($_POST["pass"])<8){
-                $err_pass="More than 6 characters";
+                $err_pass="More than 8 characters";
             }
             else if(strpos($_POST["pass"]," ")){
                 $err_pass="Space not allowed";
